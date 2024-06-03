@@ -20,14 +20,16 @@
   padding: 2rem;
 }
 
-.shopping-cart-li {
-  display: inline-flex;
+.shopping-cart-li,
+.nav-link {
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   font-size: 1.2rem;
   font-weight: 700;
   color: #252b42;
+  cursor: pointer;
 }
 .shopping-cart-icon {
   font-size: 1.8rem;

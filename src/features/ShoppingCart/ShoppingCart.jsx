@@ -6,6 +6,7 @@ import visa from '../../images/visa.png';
 import paystack from '../../images/payStack.png';
 import rating from '../../images/Rating.png';
 import './ShoppingCart.css';
+import { NavLink } from 'react-router-dom';
 
 function ShoppingCart() {
   return (
@@ -13,16 +14,20 @@ function ShoppingCart() {
       <div className="shopping-cart-payment-container">
         <ul className="shopping-cart-ul">
           <li className="shopping-cart-li">
-            <span>Home</span>
-            <span>
-              <HiChevronRight className="shopping-cart-icon" />
-            </span>
+            <NavLink to="/" className="nav-link">
+              <span>Home</span>
+              <span>
+                <HiChevronRight className="shopping-cart-icon" />
+              </span>
+            </NavLink>
           </li>
           <li className="shopping-cart-li">
-            <span>Shop</span>
-            <span>
-              <HiChevronRight className="shopping-cart-icon" />
-            </span>
+            <NavLink to="/productPage" className="nav-link">
+              <span>Shop</span>
+              <span>
+                <HiChevronRight className="shopping-cart-icon" />
+              </span>
+            </NavLink>
           </li>
           <li className="shopping-cart-li inactive">Shopping Cart</li>
         </ul>

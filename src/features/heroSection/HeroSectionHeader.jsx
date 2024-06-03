@@ -75,7 +75,14 @@ function HeroSectionHeader() {
           <div className="logo">Bandage</div>
           {!isMobile && (
             <ul className="left-lists">
-              <li className="list">Home</li>
+              <li className="list">
+                <NavLink
+                  to="/"
+                  className="nav-link"
+                  activeClassName="active"
+                ></NavLink>
+                Home
+              </li>
               <li className="list ">
                 <NavLink
                   to="/productPage"

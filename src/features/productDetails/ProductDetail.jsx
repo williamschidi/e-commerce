@@ -15,14 +15,12 @@ function ProductDetail() {
       <HeroSectionHeader />
       <ul className="product-detail-ul">
         <li>
-          <span>Home</span> <HiChevronRight className="icon" />
+          <NavLink to="/" className="nav-link" activeClassName="active">
+            <span>Home</span> <HiChevronRight className="icon" />
+          </NavLink>
         </li>
         <li>
-          <NavLink
-            to="/paymentPage"
-            className="nav-link"
-            activeClassName="active"
-          >
+          <NavLink to="/paymentPage" className="nav-link">
             Shop
           </NavLink>
         </li>
