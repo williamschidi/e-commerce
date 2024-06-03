@@ -1,0 +1,56 @@
+.call-to-action-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 140rem;
+  padding: 9rem 0;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.call-to-action {
+  max-width: 44rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 3rem;
+}
+
+.call-to-action .header {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #23a6f0;
+}
+
+.call-to-action h2 {
+  font-size: 2.8rem;
+  text-align: center;
+  color: #252b42;
+  font-weight: 700;
+}
+.desc {
+  color: #737373;
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.call-to-action h3 {
+  color: #23856d;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.call-to-action .btn {
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  background: #23a6f0;
+  color: #fff;
+  border-radius: 0.4rem;
+}

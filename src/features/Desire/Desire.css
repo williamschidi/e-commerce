@@ -1,0 +1,72 @@
+.desire-container {
+  padding: 4rem 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.desire-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding-top: 3rem;
+}
+.desire-header h2 {
+  color: #252b42;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.desire-header h4 {
+  font-size: 1.6rem;
+  color: #737373;
+  font-weight: 500;
+}
+
+.desire-header p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #737373;
+}
+
+.desire-main {
+  width: 100.45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 4rem;
+}
+
+.desire-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.5rem 4rem;
+  width: 28rem;
+}
+
+.desire-icon {
+  color: #23a6f0;
+  font-size: 3.6rem;
+}
+
+.desire-card h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #252b42;
+}
+
+.desire-card p {
+  font-size: 1.4rem;
+  color: #737373;
+  font-weight: 400;
+  text-align: center;
+}

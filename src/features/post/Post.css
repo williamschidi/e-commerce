@@ -1,0 +1,154 @@
+.post-container {
+  padding: 3rem 0;
+  width: 105rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  gap: 2.8rem;
+}
+
+.post-header {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.post-header p {
+  color: #23a6f0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.post-header h1 {
+  font-size: 2.8rem;
+  color: #252b42;
+  font-weight: 700;
+}
+
+.post-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 4rem;
+}
+
+.post-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 30rem;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+  /* position: relative; */
+}
+.post-img {
+  width: 100%;
+}
+
+.post-detail-container .img-container {
+  position: relative;
+  width: 30rem;
+}
+.img-container::before {
+  content: 'NEW';
+  display: block;
+  background-color: #e74040;
+  font-weight: 700;
+  color: #fff;
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  padding: 0.2rem 1rem;
+  border-radius: 0.4rem;
+}
+
+.post-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 2.4rem;
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.post-nav li {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #737373;
+  width: 5rem;
+  cursor: pointer;
+}
+
+.post-detail h3 {
+  font-size: 1.7rem;
+  color: #252b42;
+  font-weight: 400;
+}
+
+.post-detail p {
+  color: #737373;
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-right: 2.8rem;
+}
+
+.post-time-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1rem;
+  color: #737373;
+  padding: 1rem 0 0.5rem;
+}
+
+.post-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.post-comment {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.post-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 0;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.post-btn .post-icon {
+  font-size: 1.8rem;
+}
+
+.post-icon {
+  color: #23a6f0;
+}
