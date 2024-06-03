@@ -22,6 +22,10 @@
   font-size: 1.2rem;
   color: #bdbdbd;
 }
+.nav-link {
+  color: #737373;
+  font-weight: 600;
+}
 
 .icon {
   font-size: 1.6rem;
