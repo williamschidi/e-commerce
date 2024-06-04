@@ -1,16 +1,18 @@
 import { useSelector } from 'react-redux';
 
 import './AllProductSection.css';
+import { useState } from 'react';
 
 function AllProductSection() {
   const data = useSelector((state) => state.data.data);
-
-  const imageToDisplay = data.products?.slice(0, 10);
+  const [showLess, setShowLess] = useState(true);
 
   let productImages;
-  if (imageToDisplay) {
-    productImages = imageToDisplay?.map((x) => x.images).flat();
-    productImages?.slice(0, 10);
+  const imageToDisplay = showLess ? 10 : data.products?.length;
+  productImages = data.products?.map((x) => x.images).flat();
+
+  function handleClickMore() {
+    setShowLess((prev) => !prev);
   }
 
   return (
@@ -21,7 +23,7 @@ function AllProductSection() {
         <p>Problems trying to resolve the conflict between </p>
       </header>
       <main className="all-product-main">
-        {productImages?.slice(0, 10).map((img, i) => (
+        {productImages?.slice(0, imageToDisplay).map((img, i) => (
           <div className="card" key={i}>
             <img src={img} alt="pic" />
             <div className="product-detail">
@@ -35,9 +37,16 @@ function AllProductSection() {
           </div>
         ))}
       </main>
-      <div>
-        <button className="btn">LOAD MORE PRODUCTS</button>
-      </div>
+
+      {showLess ? (
+        <button className="btn" onClick={handleClickMore}>
+          LOAD MORE PRODUCTS
+        </button>
+      ) : (
+        <button className="btn" onClick={handleClickMore}>
+          LOAD LESS PRODUCTS
+        </button>
+      )}
     </section>
   );
 }

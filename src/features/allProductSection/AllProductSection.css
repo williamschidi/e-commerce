@@ -34,8 +34,7 @@
 
 .all-product-main {
   width: 110rem;
-  height: 74rem;
-  padding: 1.5rem 5rem 0;
+  padding: 1.5rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   column-gap: 0.5rem;
