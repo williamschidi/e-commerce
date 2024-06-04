@@ -1,7 +1,18 @@
-import img1 from '../../images/product-cover.png';
+import { useSelector } from 'react-redux';
+
 import './AllProductSection.css';
 
 function AllProductSection() {
+  const data = useSelector((state) => state.data.data);
+
+  const imageToDisplay = data.products?.slice(0, 10);
+
+  let productImages;
+  if (imageToDisplay) {
+    productImages = imageToDisplay?.map((x) => x.images).flat();
+    productImages?.slice(0, 10);
+  }
+
   return (
     <section className="all-product-container">
       <header className="all-product-header">
@@ -10,9 +21,9 @@ function AllProductSection() {
         <p>Problems trying to resolve the conflict between </p>
       </header>
       <main className="all-product-main">
-        {Array.from({ length: 10 }, (_, i) => (
+        {productImages?.slice(0, 10).map((img, i) => (
           <div className="card" key={i}>
-            <img src={img1} alt="pic" />
+            <img src={img} alt="pic" />
             <div className="product-detail">
               <p className="name">Graphic Design</p>
               <h3 className="categories">English Department</h3>
