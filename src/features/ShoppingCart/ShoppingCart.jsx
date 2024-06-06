@@ -5,7 +5,6 @@ import { HiOutlinePlus } from 'react-icons/hi';
 import master from '../../images/master.png';
 import visa from '../../images/visa.png';
 import paystack from '../../images/payStack.png';
-import rating from '../../images/Rating.png';
 import './ShoppingCart.css';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -86,11 +85,6 @@ function ShoppingCart() {
                             <p className="shopping-graphic">{item.title}</p>
                             <p>{item.availability}</p>
                             <div className="rating-container">
-                              <img
-                                src={rating}
-                                alt="rating"
-                                className="shopping-cart-rating"
-                              />
                               <div>
                                 <span>
                                   {Array.from(
