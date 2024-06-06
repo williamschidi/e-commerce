@@ -1,4 +1,3 @@
-import { useRef } from 'react';
 import { BsEnvelope } from 'react-icons/bs';
 import {
   FaFacebook,
@@ -8,7 +7,6 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 import {
-  HiMenu,
   HiOutlineChevronDown,
   HiOutlinePhone,
   HiOutlineSearch,
@@ -19,20 +17,11 @@ import { useMediaQuery } from 'react-responsive';
 
 import './HeroSectionHeader.css';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function HeroSectionHeader() {
+  const cart = useSelector((state) => state.cart.items);
   const isMobile = useMediaQuery({ maxWidth: 600 });
-  const getRef1 = useRef(null);
-  const getRef2 = useRef(null);
-
-  function handleToggle() {
-    if (getRef1.current) {
-      getRef1.current.classList.toggle('show-modal');
-    }
-    if (getRef2) {
-      getRef2.current.classList.toggle('show-modal');
-    }
-  }
 
   return (
     <header className="header">
@@ -99,53 +88,33 @@ function HeroSectionHeader() {
             </ul>
           )}
         </div>
-
-        {!isMobile && (
-          <ul className="right-lists">
-            <li className="list user">
-              <HiOutlineUser /> <span className="span">Login / Register</span>
-            </li>
-            <li className="list">
-              <HiOutlineSearch />
-            </li>
-            <li className="list">
+        <ul className="right-lists">
+          <li className="list user">
+            <HiOutlineUser /> <span className="span">Login / Register</span>
+          </li>
+          <li className="list">
+            <HiOutlineSearch />
+          </li>
+          <li className="list">
+            <NavLink to="/shopping-cart" className="nav-link icon cart-icon">
               <HiOutlineShoppingCart />
-            </li>
-            <li className="list">
-              <FaRegHeart />
-            </li>
-          </ul>
-        )}
-        {isMobile && <HiMenu onClick={handleToggle} className="hamburger" />}
-        {isMobile && (
-          <>
-            <ul ref={getRef1} className="slide-in-nav">
-              <li className="list user">
-                <span className="span">Login / Register</span>
-              </li>
-              <li className="list">
-                <HiOutlineSearch />
-              </li>
-              <li className="list">
-                <HiOutlineShoppingCart />
-              </li>
-              <li className="list">
-                <FaRegHeart />
-              </li>
-            </ul>
-            <ul className="slide-in-nav" ref={getRef2}>
-              <li className="list">Home</li>
-              <li className="list ">Shop</li>
-              <li className="list">About</li>
-              <li className="list">Blog</li>
-              <li className="list">Contact</li>
-              <li className="list">Pages</li>
-            </ul>
-          </>
-        )}
+              {cart.length > 0 ? (
+                <small className="small">{cart.length}</small>
+              ) : (
+                ''
+              )}
+            </NavLink>
+          </li>
+          <li className="list">
+            <FaRegHeart />
+          </li>
+        </ul>
       </nav>
     </header>
   );
 }
 
 export default HeroSectionHeader;
+{
+  /* <span className="symbol oty">1</span> */
+}

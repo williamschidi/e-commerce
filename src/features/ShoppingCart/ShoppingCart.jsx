@@ -1,14 +1,44 @@
 import { MdOutlineDelete } from 'react-icons/md';
 import { HiChevronRight } from 'react-icons/hi';
+import { HiMinus } from 'react-icons/hi';
+import { HiOutlinePlus } from 'react-icons/hi';
 import master from '../../images/master.png';
-import chair from '../../images/chair.jpg';
 import visa from '../../images/visa.png';
 import paystack from '../../images/payStack.png';
 import rating from '../../images/Rating.png';
 import './ShoppingCart.css';
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
+import fullStar from '../../images/full-star.png';
+import emptyStar from '../../images/empty-star.png';
 
 function ShoppingCart() {
+  const { items } = useSelector((state) => state.cart);
+  const [counts, setCounts] = useState(items.map((item) => item.count));
+
+  function handleDec(x) {
+    counts.map((count) =>
+      count === x ? setCounts(() => counts[x] - 1) : setCounts(count)
+    );
+  }
+
+  function handleInc(x) {
+    counts.map((count) =>
+      count === x ? setCounts(() => counts[x] + 1) : setCounts(count)
+    );
+  }
+
+  // function checkOccurrence() {
+  //   const count = {};
+  //   items.forEach((item) => {
+  //     count[item.title] = (count[item?.title] || 0) + 1;
+  //   });
+  //   return count;
+  // }
+
+  // items && console.log(checkOccurrence());
+
   return (
     <section className="main-container">
       <div className="shopping-cart-payment-container">
@@ -40,108 +70,89 @@ function ShoppingCart() {
                 <li>Quantity </li>
                 <li>Price</li>
               </ul>
+
               <div className="shopping-item-body">
-                <div className="shopping-item">
-                  <div className="shopped-detail">
-                    <img src={chair} alt="chair" className="shopped-item-img" />
-                    <div className="shopping-rating-container">
-                      <p className="shopping-graphic">Graphic Design</p>
-                      <p>In Stock</p>
-                      <div className="rating-container">
-                        <img
-                          src={rating}
-                          alt="rating"
-                          className="shopping-cart-rating"
-                        />
-                        <span className="shopping-cart-review">28 Reviews</span>
+                <div className="shopping-item-container">
+                  {items.map((item, ind) => (
+                    <>
+                      <div className="shopping-item">
+                        <div className="shopped-detail">
+                          <img
+                            src={item.image}
+                            alt="chair"
+                            className="shopped-item-img"
+                          />
+                          <div className="shopping-rating-container">
+                            <p className="shopping-graphic">{item.title}</p>
+                            <p>{item.availability}</p>
+                            <div className="rating-container">
+                              <img
+                                src={rating}
+                                alt="rating"
+                                className="shopping-cart-rating"
+                              />
+                              <div>
+                                <span>
+                                  {Array.from(
+                                    { length: Math.floor(item.rating) },
+                                    (_, i) => (
+                                      <img
+                                        src={fullStar}
+                                        alt="full-star"
+                                        key={i}
+                                        className="star-rating"
+                                      />
+                                    )
+                                  )}
+                                  {Array.from(
+                                    { length: 5 - Math.floor(item.rating) },
+                                    (_, i) => (
+                                      <img
+                                        src={emptyStar}
+                                        alt="full-star"
+                                        key={i}
+                                        className="star-rating"
+                                      />
+                                    )
+                                  )}
+                                </span>
+                              </div>
+
+                              <span className="shopping-cart-review">
+                                28 Reviews
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="shopped-qty">
+                          <div className="dec-container">
+                            <HiMinus
+                              className="icon-sign"
+                              // tab={item[ind + 1]}
+                              onClick={() => handleDec(ind)}
+                            />
+                          </div>
+                          <span className="symbol oty">1</span>
+                          <div className="inc-container">
+                            <HiOutlinePlus
+                              className="icon-sign"
+                              onClick={() => handleInc(ind)}
+                            />
+                          </div>
+                        </div>
+                        <div className="shopped-amount">
+                          <span className="amount">€ {item.price}</span>
+                          <span className="amt-and-qty">
+                            € {item.price} * {counts[ind]} Item
+                          </span>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div className="shopped-qty">
-                    <div className="dec-container">
-                      <span className="symbol dec">-</span>
-                    </div>
-                    <span className="symbol oty">1</span>
-                    <div className="inc-container">
-                      <span className="symbol inc">+</span>
-                    </div>
-                  </div>
-                  <div className="shopped-amount">
-                    <span className="amount">#3000</span>
-                    <span className="amt-and-qty">#3000 * 1Item</span>
-                  </div>
-                </div>
-                <div className="delete-container">
-                  <MdOutlineDelete className="delete-icon" />
-                  <span className="delete">REMOVE</span>
-                </div>
-                <div className="shopping-item">
-                  <div className="shopped-detail">
-                    <img src={chair} alt="chair" className="shopped-item-img" />
-                    <div className="shopping-rating-container">
-                      <p className="shopping-graphic">Graphic Design</p>
-                      <p>In Stock</p>
-                      <div className="rating-container">
-                        <img
-                          src={rating}
-                          alt="rating"
-                          className="shopping-cart-rating"
-                        />
-                        <span className="shopping-cart-review">28 Reviews</span>
+                      <div className="delete-container">
+                        <MdOutlineDelete className="delete-icon" />
+                        <span className="delete">REMOVE</span>
                       </div>
-                    </div>
-                  </div>
-                  <div className="shopped-qty">
-                    <div className="dec-container">
-                      <span className="symbol dec">-</span>
-                    </div>
-                    <span className="symbol oty">1</span>
-                    <div className="inc-container">
-                      <span className="symbol inc">+</span>
-                    </div>
-                  </div>
-                  <div className="shopped-amount">
-                    <span className="amount">#3000</span>
-                    <span className="amt-and-qty">#3000 * 1Item</span>
-                  </div>
-                </div>
-                <div className="delete-container">
-                  <MdOutlineDelete className="delete-icon" />
-                  <span className="delete">REMOVE</span>
-                </div>
-                <div className="shopping-item">
-                  <div className="shopped-detail">
-                    <img src={chair} alt="chair" className="shopped-item-img" />
-                    <div className="shopping-rating-container">
-                      <p className="shopping-graphic">Graphic Design</p>
-                      <p>In Stock</p>
-                      <div className="rating-container">
-                        <img
-                          src={rating}
-                          alt="rating"
-                          className="shopping-cart-rating"
-                        />
-                        <span className="shopping-cart-review">28 Reviews</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="shopped-qty">
-                    <div className="dec-container">
-                      <span className="symbol dec">-</span>
-                    </div>
-                    <span className="symbol oty">1</span>
-                    <div className="inc-container">
-                      <span className="symbol inc">+</span>
-                    </div>
-                  </div>
-                  <div className="shopped-amount">
-                    <span className="amount">#3000</span>
-                    <span className="amt-and-qty">#3000 * 1Item</span>
-                  </div>
-                </div>
-                <div className="delete-container">
-                  <MdOutlineDelete className="delete-icon" />
-                  <span className="delete">REMOVE</span>
+                    </>
+                  ))}
                 </div>
               </div>
             </div>
