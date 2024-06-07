@@ -9,7 +9,6 @@ function PaymentPage() {
     <>
       <HeroSectionHeader />
       <ShoppingCart />
-
       <DisplayGrid title="PRODUCTS RELATED TO ITEMS IN YOUR CART" />
       <Footer />
     </>

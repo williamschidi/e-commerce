@@ -9,12 +9,17 @@ import './ShoppingCart.css';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import MyStarRating from '../card/MyStarRating';
-import { decreaseQuantity, increaseQuantity } from '../api/cartDataSlice';
+import {
+  decreaseQuantity,
+  deleteItemFromCart,
+  increaseQuantity,
+} from '../api/cartDataSlice';
 
 function ShoppingCart() {
   const dispatch = useDispatch();
   const { items } = useSelector((state) => state.cart);
-  console.log(items);
+  const total = useSelector((state) => state.cart?.total);
+  console.log(total, items);
 
   function handleDec(x) {
     dispatch(decreaseQuantity(x));
@@ -22,6 +27,10 @@ function ShoppingCart() {
 
   function handleInc(x) {
     dispatch(increaseQuantity(x));
+  }
+
+  function handleDelete(x) {
+    dispatch(deleteItemFromCart(x));
   }
 
   return (
@@ -67,6 +76,7 @@ function ShoppingCart() {
                             alt="chair"
                             className="shopped-item-img"
                           />
+
                           <div className="shopping-rating-container">
                             <p className="shopping-graphic">{item.title}</p>
                             <p>{item.availability}</p>
@@ -86,20 +96,24 @@ function ShoppingCart() {
                               className="icon-sign"
                               onClick={() => handleInc(item.id)}
                             />
-                            {console.log(item.id)}
                           </div>
                         </div>
                         <div className="shopped-amount">
-                          <span className="amount">€ {item.price}</span>
+                          <span className="amount">€ {item.totalPrice}</span>
                           <span className="amt-and-qty">
                             € {item.price} * {item.count} Item
                           </span>
                         </div>
                       </div>
-                      <div className="delete-container">
+                      <button className="delete-container">
                         <MdOutlineDelete className="delete-icon" />
-                        <span className="delete">REMOVE</span>
-                      </div>
+                        <span
+                          className="delete"
+                          onClick={() => handleDelete(item.id)}
+                        >
+                          REMOVE
+                        </span>
+                      </button>
                     </div>
                   ))}
                 </div>
@@ -121,7 +135,7 @@ function ShoppingCart() {
 
               <div className="items-container subtotal-container">
                 <div className="subtotal">Subtotal</div>
-                <div className="subtotal-amt">#26500</div>
+                <div className="subtotal-amt">{total}</div>
               </div>
               <div className="items-container subtotal-container">
                 <div className="total">Total</div>

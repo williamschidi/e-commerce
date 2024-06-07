@@ -199,23 +199,27 @@
 .amt-and-qty {
   color: #6c6c6c;
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .delete-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   color: #23a6f0;
   padding-left: 1rem;
-  width: 14%;
+  width: 18%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
 .delete-icon {
   font-size: 1.8rem;
 }
 
 .delete {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.2rem;
 }
 
 .individual-item {

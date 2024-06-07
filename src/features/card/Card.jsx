@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addItemToCart } from '../api/cartDataSlice';
+import { addItemToCart, totalCost } from '../api/cartDataSlice';
 import './Card.css';
 import toast from 'react-hot-toast';
 import SuccessMsg from './SuccessMsg';
@@ -19,9 +19,11 @@ function Card({ item }) {
         count: 1,
       })
     );
+    dispatch(totalCost());
 
     toast.success(<SuccessMsg products={item} />);
   }
+
   return (
     <div className="card-1" onClick={() => handleAddToCart(item)}>
       <img src={item.images[0]} alt="pic" />
@@ -41,7 +43,12 @@ function Card({ item }) {
         </div>
       </div>
       <div className="card-btn-container ">
-        <button className="card-btn" onClick={() => handleAddToCart(item)}>
+        <button
+          className="card-btn"
+          onClick={() => {
+            handleAddToCart(item);
+          }}
+        >
           ADD TO BASKET
         </button>
       </div>
