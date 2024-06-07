@@ -285,10 +285,6 @@
   width: 100%;
 }
 
-/* .subtotal-amt {
-  margin-left: auto;
-} */
-
 .total-container {
   display: flex;
   justify-content: space-between;
@@ -314,4 +310,11 @@
   color: #fff;
   border: none;
   border-radius: 0.4rem;
+}
+
+.bank-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
 }

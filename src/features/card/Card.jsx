@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addItemToCart, totalCost } from '../api/cartDataSlice';
+import { addItemToCart } from '../api/cartDataSlice';
 import './Card.css';
 import toast from 'react-hot-toast';
 import SuccessMsg from './SuccessMsg';
@@ -19,7 +19,6 @@ function Card({ item }) {
         count: 1,
       })
     );
-    dispatch(totalCost());
 
     toast.success(<SuccessMsg products={item} />);
   }

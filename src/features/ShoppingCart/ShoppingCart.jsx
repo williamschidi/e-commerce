@@ -19,7 +19,8 @@ function ShoppingCart() {
   const dispatch = useDispatch();
   const { items } = useSelector((state) => state.cart);
   const total = useSelector((state) => state.cart?.total);
-  console.log(total, items);
+  const numberOfItem = useSelector((state) => state.cart?.numOfItems);
+  console.log(total, items, numberOfItem);
 
   function handleDec(x) {
     dispatch(decreaseQuantity(x));
@@ -99,7 +100,9 @@ function ShoppingCart() {
                           </div>
                         </div>
                         <div className="shopped-amount">
-                          <span className="amount">€ {item.totalPrice}</span>
+                          <span className="amount">
+                            € {parseFloat(item.totalPrice.toFixed(2))}
+                          </span>
                           <span className="amt-and-qty">
                             € {item.price} * {item.count} Item
                           </span>
@@ -123,7 +126,7 @@ function ShoppingCart() {
           <div className="payment-details-container">
             <div className="payment-detail-head">
               <div className="ordered-item">Order Summary</div>
-              <div className="qtys">4 Items</div>
+              <div className="qtys">{numberOfItem} Items</div>
             </div>
             <div className="payment-details">
               <div className="items-container">
@@ -135,11 +138,16 @@ function ShoppingCart() {
 
               <div className="items-container subtotal-container">
                 <div className="subtotal">Subtotal</div>
-                <div className="subtotal-amt">{total}</div>
+                <div className="subtotal-amt">
+                  {' '}
+                  € {parseFloat(total.toFixed(2))}
+                </div>
               </div>
               <div className="items-container subtotal-container">
                 <div className="total">Total</div>
-                <div className="total-amt">#26500</div>
+                <div className="total-amt">
+                  € {parseFloat(total.toFixed(2))}
+                </div>
               </div>
               <span className="margin-left">Excluding Delivery Charges</span>
 
