@@ -124,6 +124,7 @@
 .shopping-graphic {
   font-size: 1rem;
   font-weight: 700;
+  width: 10rem;
 }
 
 .rating-container {
@@ -204,10 +205,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 0.8rem; */
+
   color: #23a6f0;
   padding-left: 1rem;
-  width: 17%;
+  width: 14%;
 }
 .delete-icon {
   font-size: 1.8rem;

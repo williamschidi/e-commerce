@@ -1,0 +1,12 @@
+.star-rating-container {
+  width: 7rem;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.star-rating {
+  width: 20%;
+  height: 100%;
+}

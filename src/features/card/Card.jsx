@@ -1,10 +1,9 @@
-import fullStar from '../../images/full-star.png';
-import emptyStar from '../../images/empty-star.png';
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../api/cartDataSlice';
 import './Card.css';
 import toast from 'react-hot-toast';
 import SuccessMsg from './SuccessMsg';
+import MyStarRating from './MyStarRating';
 
 function Card({ item }) {
   const dispatch = useDispatch();
@@ -36,26 +35,8 @@ function Card({ item }) {
         <p className="price">€ {item.price}</p>
 
         <div className="rating-container">
-          <div>
-            <span>
-              {Array.from({ length: Math.floor(item.rating) }, (_, i) => (
-                <img
-                  src={fullStar}
-                  alt="full-star"
-                  key={i}
-                  className="star-rating"
-                />
-              ))}
-              {Array.from({ length: 5 - Math.floor(item.rating) }, (_, i) => (
-                <img
-                  src={emptyStar}
-                  alt="full-star"
-                  key={i}
-                  className="star-rating"
-                />
-              ))}
-            </span>
-          </div>
+          <MyStarRating rating={item.rating} />
+
           <span className="rating">{item.rating}</span>
         </div>
       </div>

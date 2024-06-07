@@ -1,16 +1,15 @@
 import fullStar from '../../images/full-star.png';
 import emptyStar from '../../images/empty-star.png';
-import './StarRatings.css';
-
-function StarRatings({ rating }) {
+import './MyStarRating.css';
+function MyStarRating({ rating }) {
   return (
-    <div className="star-container">
+    <div className="star-rating-container ">
       {Array.from({ length: Math.floor(rating) }, (_, i) => (
         <img
           src={fullStar}
           alt="full-star"
           key={i}
-          className="star-rating star"
+          className="star-rating full"
         />
       ))}
       {Array.from({ length: 5 - Math.floor(rating) }, (_, i) => (
@@ -25,4 +24,4 @@ function StarRatings({ rating }) {
   );
 }
 
-export default StarRatings;
+export default MyStarRating;

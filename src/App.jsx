@@ -3,6 +3,7 @@ import PaymentPage from './Pages/PaymentPage';
 import ProductPage from './Pages/ProductPage';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import MyStarRating from './features/card/MyStarRating';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
         <Route path="/shopping-cart" element={<PaymentPage />} />
       </Routes>
+      <MyStarRating />
 
       <Toaster
         position="top-center"
