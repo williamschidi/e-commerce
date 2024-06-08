@@ -1,0 +1,102 @@
+.card-1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  width: 22rem;
+  height: 42rem;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.2);
+}
+.card-1 img {
+  height: 23.8rem;
+  width: 18.3rem;
+}
+
+.card-1 .product-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+.brand {
+  color: #606060;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.out-of-cost {
+  position: absolute;
+  right: 50%;
+  top: 10rem;
+  background: #000;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+}
+
+.card-1 .name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1b1b1b;
+}
+
+.categories {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #737373;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1b1b1b;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.rating {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #606060;
+}
+
+.btn {
+  padding: 1.5rem 4rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #23a6f0;
+  border: 0.1rem solid #23a6f0;
+  background-color: transparent;
+  cursor: pointer;
+}
+.card-btn-container {
+  width: 100%;
+  border-top: 0.1rem solid #606060;
+  text-align: center;
+  padding: 1rem 0;
+  display: none;
+}
+
+.card-btn {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1b1b1b;
+  background: none;
+  border: none;
+}
+.card-1:hover .card-btn-container {
+  display: block;
+}
+
+.card-1 .star-rating {
+  width: 1rem;
+  height: 1rem;
+}
