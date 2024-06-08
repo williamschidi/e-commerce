@@ -8,7 +8,7 @@ import Post from '../features/post/Post';
 
 function LandingPage() {
   return (
-    <>
+    <div className="landing-page-container">
       <Hero />
       <AllProductSection />
       <Desire />
@@ -16,7 +16,7 @@ function LandingPage() {
       <AboutUs />
       <CallToAction />
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -35,12 +35,24 @@
 }
 
 .desire-main {
-  width: 100.45rem;
+  max-width: 100.45rem;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   padding: 1.5rem 4rem;
+}
+
+@media screen and (max-width: 600px) {
+  .desire-main {
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem 4rem;
+  }
 }
 
 .desire-card {
@@ -50,7 +62,7 @@
   align-items: center;
   gap: 1.6rem;
   padding: 1.5rem 4rem;
-  width: 28rem;
+  max-width: 28rem;
 }
 
 .desire-icon {

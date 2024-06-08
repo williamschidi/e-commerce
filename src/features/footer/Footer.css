@@ -43,7 +43,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  /* width: 100%; */
+
   padding: 2rem 0;
   list-style: none;
 }
@@ -94,8 +94,6 @@
   border: none;
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
-
-  /* font-size: 1.4rem; */
 }
 
 .copyright {
@@ -105,4 +103,14 @@
   font-weight: 700;
   width: 100%;
   background: #fafafa;
+}
+@media screen and (max-width: 600px) {
+  .footer-nav-body-ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1.5rem 0;
+    list-style: none;
+  }
 }

@@ -100,3 +100,9 @@
   width: 1rem;
   height: 1rem;
 }
+
+@media screen and (max-width: 600px) {
+  .card-1 {
+    width: 30rem;
+  }
+}
