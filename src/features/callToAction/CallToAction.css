@@ -56,7 +56,7 @@
 }
 @media screen and (max-width: 600px) {
   .call-to-action-container {
-    max-width: 60rem;
+    max-width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -64,8 +64,18 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 9rem 0;
+    padding: 5rem 0;
     margin: 0 auto;
     gap: 2rem;
+  }
+
+  .call-to-action {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 3rem;
   }
 }

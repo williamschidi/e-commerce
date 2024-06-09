@@ -68,13 +68,20 @@
   .about-section {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 55rem;
-    gap: 4rem;
-    padding: 2rem 2rem;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .user-detail-container {
+    gap: 2rem;
+    max-width: 44.6rem;
   }
 
   .img-gallery .image {
-    max-width: 10rem;
-    height: 10rem;
+    max-width: 10.5rem;
+    height: 10.5rem;
   }
 }

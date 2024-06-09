@@ -11,7 +11,7 @@ html {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    max-width: 60rem;
+    max-width: 100%;
   }
   .title-mobile {
     color: #252b42;
@@ -25,118 +25,6 @@ html {
     gap: 1rem;
   }
 }
-
-/*.header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 1.4rem;
-  max-width: 140rem;
-  font-family: 'Montserrat';
-}
-.contacts {
-  padding: 1.5rem 2rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background: #23856d;
-  color: #fff;
-  gap: 15rem;
-}
-
-.contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-}
-
-.left-contact {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.tel-container,
-.mail-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-.right-contact ul {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10rem;
-  padding: 1.5rem 0;
-  width: 100rem;
-  margin: 0 auto;
-}
-
-.left-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8rem;
-  font-weight: 500;
-}
-
-.logo {
-  color: #252b42;
-  font-weight: 700;
-  font-size: 2.4rem;
-}
-
-.left-lists,
-.right-lists {
-  margin-left: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  list-style: none;
-  gap: 2rem;
-  color: #737373;
-  font-family: Montserrat;
-}
-.right-lists,
-.right-lists .icon {
-  color: #23a6f0;
-}
-
-.user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.7rem;
-}
-.span {
-  font-weight: 700;
-}
-.list,
-.nav-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.7rem;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #737373;
-} */
 
 @media screen and (max-width: 600px) {
   .nav {

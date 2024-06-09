@@ -113,4 +113,16 @@
     padding: 1.5rem 0;
     list-style: none;
   }
+  .input {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .footer-btn {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .center {
+    width: 80%;
+    margin: 0 auto;
+  }
 }

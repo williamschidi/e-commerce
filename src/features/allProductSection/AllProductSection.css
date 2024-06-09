@@ -33,7 +33,7 @@
 }
 
 .all-product-main {
-  width: 110rem;
+  width: 100%;
   padding: 1.5rem 0;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -41,8 +41,12 @@
   row-gap: 4rem;
 }
 @media screen and (max-width: 600px) {
+  .all-product-container {
+    padding: 2rem 0;
+  }
+
   .all-product-main {
-    max-width: 55rem;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
