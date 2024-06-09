@@ -21,6 +21,8 @@
 
   .mobile-icon {
     font-size: 2.4rem;
+    text-decoration: none;
+    color: #737373;
   }
 
   .hamburger-nav {
