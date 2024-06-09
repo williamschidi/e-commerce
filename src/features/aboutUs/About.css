@@ -70,7 +70,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 55rem;
+    max-width: 100%;
     gap: 2rem;
     padding: 2rem 1.5rem;
   }
