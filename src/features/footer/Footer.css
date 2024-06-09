@@ -105,6 +105,9 @@
   background: #fafafa;
 }
 @media screen and (max-width: 600px) {
+  .footer-container {
+    width: 100%;
+  }
   .footer-nav-body-ul {
     display: flex;
     align-items: flex-start;
@@ -124,5 +127,14 @@
   .center {
     width: 80%;
     margin: 0 auto;
+  }
+
+  .copyright {
+    padding: 2rem 0;
+    font-size: 1.2rem;
+    color: #737373;
+    font-weight: 700;
+    width: 100%;
+    background: #fafafa;
   }
 }

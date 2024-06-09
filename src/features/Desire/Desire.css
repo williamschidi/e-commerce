@@ -45,6 +45,8 @@
 
 @media screen and (max-width: 600px) {
   .desire-container {
+    width: 100%;
+
     padding: 2rem 0;
     gap: 1.5rem;
   }
