@@ -6,6 +6,7 @@ const cartSlice = createSlice({
     items: [],
     numOfItems: 0,
     total: 0,
+    toggleSearchBar: false,
   },
   reducers: {
     addItemToCart(state, action) {
@@ -39,6 +40,11 @@ const cartSlice = createSlice({
       state.total -= item.totalPrice;
       state.items = state.items.filter((item) => item.id !== action.payload);
     },
+    handleToggleSearchBar(state) {
+      {
+        state.toggleSearchBar = true;
+      }
+    },
   },
 });
 export const {
@@ -46,5 +52,6 @@ export const {
   increaseQuantity,
   decreaseQuantity,
   deleteItemFromCart,
+  handleToggleSearchBar,
 } = cartSlice.actions;
 export default cartSlice.reducer;

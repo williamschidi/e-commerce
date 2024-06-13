@@ -20,6 +20,7 @@
   align-items: flex-start;
   justify-content: center;
   gap: 1rem;
+  width: 18rem;
 }
 .brand {
   color: #606060;

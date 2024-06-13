@@ -20,7 +20,7 @@ function ShoppingCart() {
   const { items } = useSelector((state) => state.cart);
   const total = useSelector((state) => state.cart?.total);
   const numberOfItem = useSelector((state) => state.cart?.numOfItems);
-  console.log(total, items, numberOfItem);
+
 
   function handleDec(x) {
     dispatch(decreaseQuantity(x));
